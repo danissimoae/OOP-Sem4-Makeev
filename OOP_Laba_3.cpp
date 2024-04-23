@@ -109,61 +109,108 @@ public:
 class Maple : public Trees {
 public:
 	void leaf() override {
-		cout << "Maple leaf" << endl;
+		cout << "Кленовый лист" << endl;
 	}
 };
 
 class Pine : public Trees {
 public:
 	void leaf() override {
-		cout << "Pine leaf" << endl;
+		cout << "Хвойный лист" << endl;
 	}
 };
 
 class Oak : public Trees {
 public:
 	void leaf() override {
-		cout << "Oak leaf" << endl;
+		cout << "Дубовый лист" << endl;
 	}
 };
 
 
-void performRandomActions(CustomArray<Trees*>& forest, int numActions) {
-	for (int i = 0; i < numActions; i++) {
-		int randomAction = rand() % 3;
-		if (randomAction == 0) { // Add
-			int randomIndex = rand() % (forest.getSize() + 1);
-			forest.addIn(new Oak(), randomIndex);
+int main() {
+	setlocale(LC_ALL, "rus");
+	
+	CustomArray<Trees*> forest(4);
+	for (int i = 0; i < forest.getSize(); i++) {
+		if (i % 2) {
+			forest.setValue(i, new Maple());
 		}
-		else if (randomAction == 1 && forest.getSize() > 0) { // Remove
-			int randomIndex = rand() % forest.getSize();
-			Trees* tree = forest.getValue(randomIndex);
-			forest.pop(randomIndex);
-			delete tree;
-		}
-		else { // Method call
-			if (forest.getSize() > 0) {
-				int randomIndex = rand() % forest.getSize();
-				forest.getValue(randomIndex)->leaf();
-			}
+		else {
+			forest.setValue(i, new Pine());
 		}
 	}
-}
 
-int main() {
-	srand(time(nullptr));
+	for (int i = 0; i < forest.getSize(); i++) {
+		forest.getValue(i)->leaf();
+	}
 
-	cout << "100 случайных действий:" << endl;
-	CustomArray<Trees*> forest1(4);
-	performRandomActions(forest1, 100);
+	cout << endl;
 
-	cout << "1000 случайных действий:" << endl;
-	CustomArray<Trees*> forest2(4);
-	performRandomActions(forest2, 1000);
+	forest.addFirst(new Oak());
 
-	cout << "10000 случайных действий:" << endl;
-	CustomArray<Trees*> forest3(4);
-	performRandomActions(forest3, 10000);
+	for (int i = 0; i < forest.getSize(); i++) {
+		forest.getValue(i)->leaf();
+	}
+
+	cout << endl;
+
+	forest.addLast(new Pine());
+
+	for (int i = 0; i < forest.getSize(); i++) {
+		forest.getValue(i)->leaf();
+	}
+
+	cout << endl;
+
+	forest.addIn(new Maple(), 3);
+
+	for (int i = 0; i < forest.getSize(); i++) {
+		forest.getValue(i)->leaf();
+	}
+
+	cout << endl;
+
+	//////////////////////////////////////////////
+
+	std::cout << "Состояние контейнера до выполнения действий:" << std::endl;
+	for (int i = 0; i < forest.getSize(); i++) {
+		forest.getValue(i)->leaf();
+	}
+
+	std::cout << std::endl;
+
+	// Время начала работы
+	clock_t startTime = clock();
+
+	// Цикл из 100 случайных действий
+	for (int i = 0; i < 1000; i++) {
+		int action = rand() % 3; // Случайный выбор действия
+		int index = rand() % forest.getSize(); // Случайный индекс элемента
+
+		switch (action) {
+		case 0:
+			forest.addFirst(new Oak());
+			break;
+		case 1:
+			forest.addLast(new Pine());
+			break;
+		case 2:
+			forest.getValue(index)->leaf();
+			break;
+		default:
+			break;
+		}
+	}
+
+	// Время окончания работы
+	clock_t endTime = clock();
+
+	// Вычисление времени работы
+	double totalTime = double(endTime - startTime) / CLOCKS_PER_SEC;
+
+	std::cout << std::endl;
+	std::cout << "Время выполнения: " << totalTime << " секунд" << std::endl;
 
 	return 0;
 }
