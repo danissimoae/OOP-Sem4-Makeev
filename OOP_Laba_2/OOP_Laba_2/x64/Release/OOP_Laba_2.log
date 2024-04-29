@@ -1,0 +1,37 @@
+﻿  OOP_Laba_2.cpp
+C:\Users\ZDR\Desktop\Учеба\ООП\OOP_Laba_2\OOP_Laba_2\Point.h(2,12): error C2011: Point: переопределение типа "class"
+  (компиляция исходного файла "OOP_Laba_2.cpp")
+  C:\Users\ZDR\Desktop\Учеба\ООП\OOP_Laba_2\OOP_Laba_2\Point.h(2,7):
+   см. объявление "Point"
+  
+C:\Users\ZDR\Desktop\Учеба\ООП\OOP_Laba_2\OOP_Laba_2\ColoredPoint.h(3,28): error C2504: Point: не определен базовый класс
+  (компиляция исходного файла "OOP_Laba_2.cpp")
+  
+C:\Users\ZDR\Desktop\Учеба\ООП\OOP_Laba_2\OOP_Laba_2\ColoredPoint.h(7,19): error C2614: ColoredPoint: недопустимая инициализация члена: "Point" не является базовым классом или членом
+  (компиляция исходного файла "OOP_Laba_2.cpp")
+  
+C:\Users\ZDR\Desktop\Учеба\ООП\OOP_Laba_2\OOP_Laba_2\ColoredPoint.h(12,42): error C2614: ColoredPoint: недопустимая инициализация члена: "Point" не является базовым классом или членом
+  (компиляция исходного файла "OOP_Laba_2.cpp")
+  
+C:\Users\ZDR\Desktop\Учеба\ООП\OOP_Laba_2\OOP_Laba_2\ColoredPoint.h(20,3): error C2065: x: необъявленный идентификатор
+  (компиляция исходного файла "OOP_Laba_2.cpp")
+  
+C:\Users\ZDR\Desktop\Учеба\ООП\OOP_Laba_2\OOP_Laba_2\ColoredPoint.h(20,9): error C2039: "x": не является членом "ColoredPoint".
+  (компиляция исходного файла "OOP_Laba_2.cpp")
+  C:\Users\ZDR\Desktop\Учеба\ООП\OOP_Laba_2\OOP_Laba_2\ColoredPoint.h(3,7):
+   см. объявление "ColoredPoint"
+  
+C:\Users\ZDR\Desktop\Учеба\ООП\OOP_Laba_2\OOP_Laba_2\ColoredPoint.h(21,3): error C2065: y: необъявленный идентификатор
+  (компиляция исходного файла "OOP_Laba_2.cpp")
+  
+C:\Users\ZDR\Desktop\Учеба\ООП\OOP_Laba_2\OOP_Laba_2\ColoredPoint.h(21,9): error C2039: "y": не является членом "ColoredPoint".
+  (компиляция исходного файла "OOP_Laba_2.cpp")
+  C:\Users\ZDR\Desktop\Учеба\ООП\OOP_Laba_2\OOP_Laba_2\ColoredPoint.h(3,7):
+   см. объявление "ColoredPoint"
+  
+C:\Users\ZDR\Desktop\Учеба\ООП\OOP_Laba_2\OOP_Laba_2\ColoredPoint.h(25,43): error C2065: x: необъявленный идентификатор
+  (компиляция исходного файла "OOP_Laba_2.cpp")
+  
+C:\Users\ZDR\Desktop\Учеба\ООП\OOP_Laba_2\OOP_Laba_2\ColoredPoint.h(25,46): error C2065: y: необъявленный идентификатор
+  (компиляция исходного файла "OOP_Laba_2.cpp")
+  
