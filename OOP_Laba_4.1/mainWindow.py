@@ -9,8 +9,8 @@ class MainWindow(QMainWindow):
 
         self._canvas = Canvas(self, 20, 20, 500, 500)
 
-        self._checkBoxCommand = QCheckBox(self)
-        self._checkBoxCommand.stateChanged.connect(
+        self._checkBoxCtrl = QCheckBox(self)
+        self._checkBoxCtrl.stateChanged.connect(
             lambda: self._canvas.setSelectFew(False)
         )
 
@@ -30,24 +30,24 @@ class MainWindow(QMainWindow):
                 font: 18pt;
             """
         )
-        self.setFixedSize(770, 640)
+        self.setFixedSize(720, 560)
 
-        self._checkBoxSelectAll.setGeometry(640, 20, 110, 50)
-        self._checkBoxSelectAll.setText("All")
+        self._checkBoxSelectAll.setGeometry(540, 40, 200, 50)
+        self._checkBoxSelectAll.setText("All selected")
 
-        self._checkBoxCommand.setGeometry(640, 90, 110, 50)
-        self._checkBoxCommand.setText("Command")
+        self._checkBoxCtrl.setGeometry(540, 90, 200, 50)
+        self._checkBoxCtrl.setText("Ctrl enabled")
 
 
     def keyPressEvent(self, event):
         if event.key() == Qt.Key.Key_Delete:
             self._canvas.deleteSelected()
 
-        if event.key() == Qt.Key.Key_Control and self._checkBoxCommand.isChecked():
+        if event.key() == Qt.Key.Key_Control and self._checkBoxCtrl.isChecked():
             self._canvas.setSelectFew(True)
 
 
     def keyReleaseEvent(self, event):
-        if event.key() == Qt.Key.Key_Control and self._checkBoxCommand.isChecked():
+        if event.key() == Qt.Key.Key_Control and self._checkBoxCtrl.isChecked():
             self._canvas.setSelectFew(False)
 
