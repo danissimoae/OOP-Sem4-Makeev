@@ -59,6 +59,7 @@ class Canvas(QLabel):
         # Создавать ли объект
         flag = True
 
+
         if self._selectFew and event.modifiers() & Qt.KeyboardModifier.ControlModifier:
             for i in range(len(self._container) - 1, -1, -1):
                 circle = self._container[i]
