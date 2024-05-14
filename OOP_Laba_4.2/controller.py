@@ -1,4 +1,6 @@
+from PyQt6.QtGui import QIntValidator
 from PyQt6.QtWidgets import QMainWindow
+
 from ui import Ui_MainWindow
 from model import NumbersModel
 
@@ -12,6 +14,11 @@ class MainWindow(QMainWindow):
 
         self.model = NumbersModel()
         self.model.changed.connect(self.updateData)
+
+        intValidator = QIntValidator(0, 100)
+        self.ui.lineEditA.setValidator(intValidator)
+        self.ui.lineEditB.setValidator(intValidator)
+        self.ui.lineEditC.setValidator(intValidator)
 
         self.ui.lineEditA.editingFinished.connect(
             lambda: self.model.setA(self.ui.lineEditA.text())
