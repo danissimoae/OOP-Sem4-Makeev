@@ -1,3 +1,5 @@
+# Объектно-ориентированное программирование (C++, Python PyQt GUI)
+
 ## Лабораторная работа 1. «Кнопки и Формы»
 ### Тип приложения: GUI, desktop; язык: без ограничений.
 Создание простейшего desktop-приложения с графическим интерфейсом пользователя (GUI) в любой среде (Visual Studio - Windows Forms Application или WPF; C++ Builder - VCL Application; С++ и Qt Framework и т.д.).
